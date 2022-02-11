@@ -4,6 +4,10 @@ namespace ShopApp.WebUI.Controllers
 {
     public class ProductController : Controller
     {
+        public string Index()
+        {
+            return "product/index";
+        }
         //localhost/product/list
         public string List()
         {

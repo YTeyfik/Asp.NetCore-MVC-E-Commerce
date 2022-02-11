@@ -36,7 +36,8 @@ namespace ShopApp.WebUI
             {
                 endpoints.MapControllerRoute(
                         name: "default",
-                        pattern:"{controller}/{action}/{id?}"
+                        //{controller=Home}/{action=Index} default routing 
+                        pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
             });
         }
