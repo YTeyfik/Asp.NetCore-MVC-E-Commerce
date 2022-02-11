@@ -1,18 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ShopApp.WebUI.Controllers
 {
     public class HomeController : Controller
     {
         //localhost:5000/home/index
-        public string Index()
+        public IActionResult Index()
         {
-            return "home/index";
+            //int hour = DateTime.Now.Hour;
+            //string message = hour > 12 ? "İyi Günler" : "Günaydın";
+            //ViewBag.Message = message;
+            //ViewBag.Name = "Ali";
+
+            return View();
         }
         //localhost:5000/home/about
-        public string About()
+        public IActionResult About()
         {
-            return "home/about";
+            return View();
+            //return View("MyPage"); Bu yöntemde about olarak çağırmak yerine verdiğimiz string ifade ile bulmaya çalışır
         }
     }
 }

@@ -1,22 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShopApp.WebUI.Models;
 
 namespace ShopApp.WebUI.Controllers
 {
     public class ProductController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "product/index";
+            return View();
         }
         //localhost/product/list
-        public string List()
+        public IActionResult List()
         {
-            return "product/list";
+            return View();
         }
         //localhost/product/details
-        public string Details()
+        public IActionResult Details(int id)
         {
-            return "product/list";
+            var p = new Product();
+            p.Name = "Iphone X";
+            p.Description = "Güzel telefon";
+            p.Price = 3000;
+            return View(p);
         }
     }
 }
