@@ -1,12 +1,21 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-   <p>Home</p> 
-</body>
-</html>
+﻿@model ProductViewModel
+
+@{
+    var products = Model.Products;
+}
+
+@if(Model.Products.Count == 0)
+{   
+    @await Html.PartialAsync("_noProduct")
+}
+else
+{
+    <div class="row">
+        @foreach(var product in products)
+        {
+            <div class="col-md-3">
+                @await Html.PartialAsync("_product",product)
+            </div>
+        }
+    </div>
+}

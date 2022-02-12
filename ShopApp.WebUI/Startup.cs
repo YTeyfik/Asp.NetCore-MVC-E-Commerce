@@ -27,7 +27,7 @@ namespace ShopApp.WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles(); // wwwroot altýndaki klasörler açýlýr            
             app.UseRouting();
 
             //localhost:5000

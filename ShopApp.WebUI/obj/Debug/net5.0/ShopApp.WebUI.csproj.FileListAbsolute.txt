@@ -35,3 +35,12 @@ C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\ShopApp.WebUI
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Product\List.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_navbar.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_header.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_noProduct.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_product.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_categories.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\Components\Categories\Default.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs

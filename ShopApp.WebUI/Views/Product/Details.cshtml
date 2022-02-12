@@ -1,15 +1,10 @@
-﻿@model ShopApp.WebUI.Models.Product
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-</head>
-<body>
-    <p>Ürün Adı : @Model.Name</p>
-    <p>Ürün Fiyat : @Model.Price</p>
-    <p>Ürün Açıklama : @Model.Description</p>
-</body>
-</html>
+﻿@model Product
+
+@section Categories{
+     @await Component.InvokeAsync("Categories")
+}
+<p>Ürün Adı : @Model.Name</p>
+<p>Ürün Fiyat : @Model.Price</p>
+<p>Ürün Açıklama : @Model.Description</p>
+ 
+
