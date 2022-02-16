@@ -4,7 +4,11 @@
     var products = Model.Products;
 }
 
-@if(Model.Products.Count == 0)
+@section Header{
+    @await Html.PartialAsync("_header")
+}
+
+@if(products.Count == 0)
 {   
     @await Html.PartialAsync("_noProduct")
 }

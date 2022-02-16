@@ -1,10 +1,22 @@
 ﻿@model Product
-
 @section Categories{
      @await Component.InvokeAsync("Categories")
 }
-<p>Ürün Adı : @Model.Name</p>
-<p>Ürün Fiyat : @Model.Price</p>
-<p>Ürün Açıklama : @Model.Description</p>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="~/images/@Model.ImageUrl" class="card-img" alt=""/>
+            </div>
+            <div class="col-md-9">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <p class="card-text">@Model.Price</p>
+                    <p class="card-text">@Model.Description</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
  
 

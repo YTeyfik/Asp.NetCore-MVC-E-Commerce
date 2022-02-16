@@ -1,7 +1,13 @@
 ﻿@model List<Category>
 <div class="list-group">
+    <a href="/product/list" class="list-group-item list-group-item-action ">Kategoriler</a>
     @foreach(var category in Model)
     {
-        <a href="" class="list-group-item list-group-item-action">@category.Name</a>
+        <a asp-controller="Product"
+        asp-action="List" 
+        asp-route-id="@category.CategoryId"  
+        class="list-group-item list-group-item-action @(ViewBag.SelectedCategory==category.CategoryId.ToString()?"active":"")">
+            @category.Name
+        </a>
     }
 </div>

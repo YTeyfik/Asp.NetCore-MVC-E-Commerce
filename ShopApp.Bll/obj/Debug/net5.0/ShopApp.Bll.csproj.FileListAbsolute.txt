@@ -1,0 +1,17 @@
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\bin\Debug\net5.0\ShopApp.Bll.deps.json
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\bin\Debug\net5.0\ShopApp.Bll.dll
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\bin\Debug\net5.0\ref\ShopApp.Bll.dll
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\bin\Debug\net5.0\ShopApp.Bll.pdb
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\bin\Debug\net5.0\ShopApp.Dal.dll
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\bin\Debug\net5.0\ShopApp.Entity.dll
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\bin\Debug\net5.0\ShopApp.Dal.pdb
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\bin\Debug\net5.0\ShopApp.Entity.pdb
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ShopApp.Bll.csproj.AssemblyReference.cache
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ShopApp.Bll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ShopApp.Bll.AssemblyInfoInputs.cache
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ShopApp.Bll.AssemblyInfo.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ShopApp.Bll.csproj.CoreCompileInputs.cache
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ShopApp.Bll.csproj.CopyComplete
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ShopApp.Bll.dll
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ref\ShopApp.Bll.dll
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.Bll\obj\Debug\net5.0\ShopApp.Bll.pdb

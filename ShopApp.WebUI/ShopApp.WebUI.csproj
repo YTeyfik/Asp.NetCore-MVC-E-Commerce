@@ -5,9 +5,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ShopDb-journal" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopApp.Bll\ShopApp.Bll.csproj" />
+    <ProjectReference Include="..\ShopApp.Dal\ShopApp.Dal.csproj" />
   </ItemGroup>
 
 </Project>

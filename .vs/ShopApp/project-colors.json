@@ -10,7 +10,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "30a21f5f-59ec-464e-9e35-351e7aa8d6c0": {
+      "ProjectGuid": "30a21f5f-59ec-464e-9e35-351e7aa8d6c0",
+      "DisplayName": "ShopApp.Entity",
+      "ColorIndex": 1
+    },
+    "769d3b5b-65a1-444f-ab4e-3b24d2ec9d80": {
+      "ProjectGuid": "769d3b5b-65a1-444f-ab4e-3b24d2ec9d80",
+      "DisplayName": "ShopApp.Dal",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }

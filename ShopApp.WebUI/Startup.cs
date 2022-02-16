@@ -3,6 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ShopApp.Bll.Abstract;
+using ShopApp.Bll.Concrete;
+using ShopApp.Dal.Abstract;
+using ShopApp.Dal.Concrete.EFCore.Repository;
+using ShopApp.Dal.Concrete.EFCore.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +21,9 @@ namespace ShopApp.WebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //Asp.net core içerisinde mvc yapýsýný kullanacaðýmýzý belirtiyoruz
+            //DependecyInjection iþlemi
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductService, ProductManager>();
             services.AddControllersWithViews();
         }
 
@@ -25,6 +32,8 @@ namespace ShopApp.WebUI
         {
             if (env.IsDevelopment())
             {
+                //Burasý eðer db boþsa ve migration beklemiyorsa test verilerini getiriyor
+                TestDataBase.Test();
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles(); // wwwroot altýndaki klasörler açýlýr            
