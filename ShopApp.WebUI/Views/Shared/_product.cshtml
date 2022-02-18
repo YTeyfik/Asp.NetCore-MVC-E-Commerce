@@ -3,14 +3,13 @@
     <img src="~/images/@Model.ImageUrl" class="card-img-top" style="height:16rem;" alt="...">
     <div class="card-body">
         <h4 class="card-title">@Model.Name</h4>
-        <p class="card-text">@Model.Price TL</p>
-        <p class="card-text">@Model.Description</p>
-         @*asp tagleri*@
-        <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId" class="btn btn-sm btn-outline-success">Incele</a>
-        <a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-sm btn-outline-warning">Düzenle</a>
-        <form method="POST" action="/product/delete" style="display: inline;">
-            <input type="hidden" name="ProductId" value="@Model.ProductId">
-            <button type="submit"class="btn btn-outline-danger btn-sm">Delete</button>
-        </form>
+        <small>
+            <i class="fa-solid fa-turkish-lira-sign"></i>@Model.Price
+        </small>
+    </div>
+    <div class="card-footer text-center">
+        @*asp tagleri*@
+        <a asp-controller="Shop" asp-action="Details" asp-route-url="@Model.Url" class="btn btn-sm btn-outline-info">Details</a>
+        <a asp-controller="Shop" asp-action="addtocart" asp-route-url="@Model.Url" class="btn btn-sm btn-outline-success">Add to Cart</a>
     </div>
 </div>

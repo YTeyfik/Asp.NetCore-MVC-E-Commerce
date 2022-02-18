@@ -80,3 +80,6 @@ C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\bin\Debug\net5.0\Humanizer.dll
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\bin\Debug\net5.0\ShopApp.Bll.dll
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\bin\Debug\net5.0\ShopApp.Bll.pdb
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shop\List.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shop\Details.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shop\Search.cshtml.g.cs

@@ -1,25 +1,26 @@
-﻿@model ProductViewModel
+﻿@model ProductListViewModel
 
 @{
     var products = Model.Products;
 }
-
-@section Header{
-    @await Html.PartialAsync("_header")
-}
-
-@if(products.Count == 0)
-{   
-    @await Html.PartialAsync("_noProduct")
-}
-else
+@section Header
 {
-    <div class="row">
-        @foreach(var product in products)
-        {
-            <div class="col-md-3">
-                @await Html.PartialAsync("_product",product)
-            </div>
-        }
-    </div>
+@await Html.PartialAsync("_header")
 }
+
+<div class="row">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("Categories")
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+    @foreach(var product in products)
+    {
+        <div class="col-md-4">
+            @await Html.PartialAsync("_product",product)
+        </div>
+    }    
+</div>
+    </div>
+</div>
+ 

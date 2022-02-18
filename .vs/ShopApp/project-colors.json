@@ -20,7 +20,12 @@
       "ProjectGuid": "769d3b5b-65a1-444f-ab4e-3b24d2ec9d80",
       "DisplayName": "ShopApp.Dal",
       "ColorIndex": 2
+    },
+    "8b63825b-fe72-4328-a5d2-766a90cfc3df": {
+      "ProjectGuid": "8b63825b-fe72-4328-a5d2-766a90cfc3df",
+      "DisplayName": "ShopApp.Bll",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

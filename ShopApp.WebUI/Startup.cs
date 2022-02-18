@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ShopApp.Bll.Abstract;
@@ -23,7 +22,10 @@ namespace ShopApp.WebUI
         {
             //DependecyInjection iþlemi
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
             services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<ICategoryService, CategoryManager>();
             services.AddControllersWithViews();
         }
 
@@ -43,6 +45,25 @@ namespace ShopApp.WebUI
             //localhost:5000/products
             app.UseEndpoints(endpoints =>
             {
+                //Buranýn sýrasý önemli
+                endpoints.MapControllerRoute(
+                    name: "search",
+                    pattern: "search",
+                    defaults: new { controller = "Shop", action = "search" }
+                );
+               
+                endpoints.MapControllerRoute(
+                    name: "productdetails",
+                    pattern: "{url}",
+                    defaults: new { controller = "Shop", action = "details" }
+                );
+                //burasý shop/list e giderken browserda product isminde gözükecek
+                endpoints.MapControllerRoute(
+                    name: "products",
+                    pattern: "products/{category?}",
+                    defaults: new { controller = "Shop", action = "list" }
+                );
+
                 endpoints.MapControllerRoute(
                         name: "default",
                         //{controller=Home}/{action=Index} default routing 

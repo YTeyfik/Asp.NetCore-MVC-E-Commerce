@@ -9,6 +9,10 @@ namespace ShopApp.Dal.Abstract
 {
     public interface IProductRepository:IGenericRepository<Product>
     {
-        List<Product> GetPopularProducts();
+        List<Product> GetSearch(string search);
+        Product GetProductDetails(string url);
+        List<Product> GetHomePageProducts();
+        List<Product> GetProductsByCategory(string name, int page, int pageSize);
+        int GetCountByCategory(string category);
     }
 }

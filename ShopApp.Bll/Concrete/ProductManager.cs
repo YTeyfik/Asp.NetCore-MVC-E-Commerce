@@ -31,17 +31,45 @@ namespace ShopApp.Bll.Concrete
 
         public List<Product> GetAll()
         {
+            //iş kuralları eklenecek
             return _productRepository.GetAll();
         }
 
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            //iş kuralları eklenecek
+            return _productRepository.GetById(id);
+        }
+
+        public int GetCountByCategory(string category)
+        {
+            return _productRepository.GetCountByCategory(category);
+        }
+
+        public List<Product> GetHomePageProducts()
+        {
+            return _productRepository.GetHomePageProducts();
+        }
+
+        public Product GetProductDetails(string url)
+        {
+            //iş kuralları eklenecek
+            return _productRepository.GetProductDetails(url);
+        }
+
+        public List<Product> GetProductsByCategory(string name, int page, int pageSize)
+        {
+            return _productRepository.GetProductsByCategory(name, page, pageSize);
+        }
+
+        public List<Product> GetSearch(string search)
+        {
+            return _productRepository.GetSearch(search);
         }
 
         public void Update(Product entity)
         {
-            throw new NotImplementedException();
+            _productRepository.Update(entity);
         }
     }
 }
