@@ -14,5 +14,7 @@ namespace ShopApp.Dal.Abstract
         List<Product> GetHomePageProducts();
         List<Product> GetProductsByCategory(string name, int page, int pageSize);
         int GetCountByCategory(string category);
+        Product GetByIdWithCategories(int id);
+        void Update(Product entity, int[] categoryIds);
     }
 }

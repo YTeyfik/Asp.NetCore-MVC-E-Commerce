@@ -45,17 +45,12 @@ namespace ShopApp.WebUI
             //localhost:5000/products
             app.UseEndpoints(endpoints =>
             {
-                //Buranýn sýrasý önemli
+                //Buranýn sýrasý önemli daha doðrusu önemli olanlar üste alýnmalý yada gruplanmalý
+
                 endpoints.MapControllerRoute(
                     name: "search",
                     pattern: "search",
                     defaults: new { controller = "Shop", action = "search" }
-                );
-               
-                endpoints.MapControllerRoute(
-                    name: "productdetails",
-                    pattern: "{url}",
-                    defaults: new { controller = "Shop", action = "details" }
                 );
                 //burasý shop/list e giderken browserda product isminde gözükecek
                 endpoints.MapControllerRoute(
@@ -63,6 +58,43 @@ namespace ShopApp.WebUI
                     pattern: "products/{category?}",
                     defaults: new { controller = "Shop", action = "list" }
                 );
+                endpoints.MapControllerRoute(
+                  name: "adminproducts",
+                  pattern: "admin/products",
+                  defaults: new { controller = "Admin", action = "ProductList" }
+                );
+                endpoints.MapControllerRoute(
+                name: "adminproductcreate",
+                pattern: "admin/products/create",
+                defaults: new { controller = "Admin", action = "ProductCreate" }
+                );
+                endpoints.MapControllerRoute(
+                  name: "adminproductedit",
+                  pattern: "admin/products/{id?}",
+                  defaults: new { controller = "Admin", action = "ProductEdit" }
+                );
+                endpoints.MapControllerRoute(
+                name: "admincategories",
+                pattern: "admin/categories",
+                defaults: new { controller = "Admin", action = "CategoryList" }
+                );
+                endpoints.MapControllerRoute(
+                name: "admincategorycreate",
+                pattern: "admin/categories/create",
+                defaults: new { controller = "Admin", action = "CategoryCreate" }
+                );
+                endpoints.MapControllerRoute(
+                  name: "admincategoryedit",
+                  pattern: "admin/categories/{id?}",
+                  defaults: new { controller = "Admin", action = "CategoryEdit" }
+                );
+
+                endpoints.MapControllerRoute(
+                    name: "productdetails",
+                    pattern: "{url}",
+                    defaults: new { controller = "Shop", action = "details" }
+                );
+                
 
                 endpoints.MapControllerRoute(
                         name: "default",

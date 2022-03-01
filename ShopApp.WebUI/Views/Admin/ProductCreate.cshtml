@@ -1,0 +1,27 @@
+﻿@model ProductModel
+<h1 class="h3">Create Product</h1>
+<hr />
+
+<form asp-controller="admin" asp-action="productcreate" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Url"></label>
+        <input asp-for="Url" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-outline-success">Save</button>
+</form>

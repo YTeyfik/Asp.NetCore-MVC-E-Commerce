@@ -2,7 +2,7 @@
 using ShopApp.Bll.Abstract;
 using ShopApp.Entity;
 using ShopApp.WebUI.Models;
-using ShopApp.WebUI.ViewModels;
+
 using System.Linq;
 
 namespace ShopApp.WebUI.Controllers

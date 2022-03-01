@@ -1,0 +1,71 @@
+﻿@model ProductListViewModel
+
+@{
+    var products=Model.Products;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Admin Products</h1><hr />
+        <a href="/admin/products/create" class="btn btn-outline-success">Add Products</a>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Home</th>
+                    <th scope="col">Approved</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (products.Count > 0)
+                {
+                    @foreach(var item in products)
+                    {
+                    <tr>
+                        <td>@item.ProductId</td>
+                        <td><img src="~/images/@item.ImageUrl" width="80" /></td>
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                        <td>
+                            @if(@item.IsHome)
+                            {
+                                <i class="fa-solid fa-square-check"></i>
+                            }
+                            else
+                            {
+                                <i class="fa-solid fa-square-xmark"></i>
+                            }
+                        </td>
+                        <td>
+                            @if(@item.IsApproved)
+                            {
+                                <i class="fa-solid fa-square-check"></i>
+                            }
+                            else
+                            {
+                                <i class="fa-solid fa-square-xmark"></i>
+                            }
+                        </td>
+                        <td>
+                            <a href="/admin/products/@item.ProductId" class="btn btn-outline-info btn-sm mr-2">Edit</a>
+                            <form action="/admin/productdelete" method="post" style="display:inline;">
+                                <input type="hidden" name="ProductId" value="@item.ProductId"/>
+                                <button type="submit" class="btn btn-outline-danger btn-sm mr-2">Delete</button>
+                            </form>
+                            
+                        </td>
+                    </tr>  
+                    }
+                }
+                else
+                {
+                    <h3 class="alert alert-warning">No Products</h3>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

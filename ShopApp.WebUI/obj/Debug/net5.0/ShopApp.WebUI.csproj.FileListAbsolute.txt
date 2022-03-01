@@ -83,3 +83,10 @@ C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\bin\Debug\net5.0\ShopApp.Bll.p
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shop\List.cshtml.g.cs
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shop\Details.cshtml.g.cs
 C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Shop\Search.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Admin\ProductList.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Admin\CategoryList.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Admin\CategoryCreate.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Admin\CategoryEdit.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Admin\ProductCreate.cshtml.g.cs
+C:\Users\teyo_\source\repos\ShopApp\ShopApp.WebUI\obj\Debug\net5.0\Razor\Views\Admin\ProductEdit.cshtml.g.cs

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShopApp.Bll.Abstract;
 using ShopApp.Dal.Abstract;
-using ShopApp.WebUI.ViewModels;
+using ShopApp.WebUI.Models;
 using System;
 using System.Collections.Generic;
 

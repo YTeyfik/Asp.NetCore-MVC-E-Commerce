@@ -9,6 +9,7 @@ namespace ShopApp.Dal.Abstract
 {
     public interface ICategoryRepository:IGenericRepository<Category>
     {
-        List<Category> GetPopularCategories();
+        Category GetByIdWithProducts(int categoryId);
+        void DeleteFromCategory(int productId,int categoryId);
     }
 }
