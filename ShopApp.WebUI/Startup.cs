@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ShopApp.Bll.Abstract;
@@ -7,6 +10,7 @@ using ShopApp.Bll.Concrete;
 using ShopApp.Dal.Abstract;
 using ShopApp.Dal.Concrete.EFCore.Repository;
 using ShopApp.Dal.Concrete.EFCore.Test;
+using ShopApp.WebUI.UserOperation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +24,46 @@ namespace ShopApp.WebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<UserContext>(options => options.UseSqlite("Data Source=ShopDb"));
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<UserContext>().AddDefaultTokenProviders();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                //Password
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase=true;
+                options.Password.RequiredLength = 8;
+                
+                //LockOut
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+                options.Lockout.AllowedForNewUsers = true;
+
+                //user
+                options.User.RequireUniqueEmail = true;
+                //sign in
+                //burasý mail onayý ve telefon onayý yapýlmýþmý diye kontrol ediyor
+                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+
+            });
+
+            //cookie yönetimi
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = "/account/login";
+                options.LogoutPath = "/account/logout";
+                options.AccessDeniedPath = "/account/accessdenied";
+                options.SlidingExpiration = true; //burasý client istek yapmazsa 20 dakka sonra cookieleri silip login sayfasýna gönderiyor
+                options.ExpireTimeSpan= TimeSpan.FromDays(90); //90 gün boyunca tanýnacaðýný belirttik
+                options.Cookie = new CookieBuilder
+                {
+                    HttpOnly = true, //http request ile alýnýr
+                    Name =".ShopApp.Cookie"
+                };
+
+            });
+
             //DependecyInjection iþlemi
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -39,6 +83,7 @@ namespace ShopApp.WebUI
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles(); // wwwroot altýndaki klasörler açýlýr            
+            app.UseAuthentication();
             app.UseRouting();
 
             //localhost:5000
