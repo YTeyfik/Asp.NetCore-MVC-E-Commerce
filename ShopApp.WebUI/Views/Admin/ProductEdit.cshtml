@@ -2,7 +2,7 @@
 <h1 class="h3">Edit Product</h1>
 <hr />
 
-<form asp-controller="admin" asp-action="productedit" method="post">
+<form asp-controller="admin" asp-action="productedit" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-8">
             <input type="hidden" name="ProductId" value="@Model.ProductId" />
@@ -20,11 +20,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description"></label>
-                <textarea asp-for="Description" class="form-control"></textarea>
+                <textarea asp-for="Description" id="editor" class="form-control"></textarea>
             </div>
             <div class="form-group">
                 <label asp-for="ImageUrl"></label>
-                <input asp-for="ImageUrl" class="form-control">
+                <input asp-for="ImageUrl" type="hidden" class="form-control">
+                <img src="~/images/@Model.ImageUrl" width="80"/>
+                <input type="file" name="file" />
             </div>
             <button type="submit" class="btn btn-outline-success">Save</button>
         </div>
@@ -64,3 +66,9 @@
         </div>
    </div>
 </form>
+
+
+<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+<script>
+        CKEDITOR.replace( 'editor' );
+</script>

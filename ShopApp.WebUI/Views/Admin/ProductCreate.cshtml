@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
         <label asp-for="Description"></label>
-        <textarea asp-for="Description" class="form-control"></textarea>
+        <textarea asp-for="Description" id="editor" class="form-control"></textarea>
     </div>
     <div class="form-group">
         <label asp-for="ImageUrl"></label>
@@ -25,3 +25,9 @@
     </div>
     <button type="submit" class="btn btn-outline-success">Save</button>
 </form>
+
+
+<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+<script>
+        CKEDITOR.replace( 'editor' );
+</script>

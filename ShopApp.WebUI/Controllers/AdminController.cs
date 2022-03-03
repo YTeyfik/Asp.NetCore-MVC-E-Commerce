@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ShopApp.Bll.Abstract;
 using ShopApp.Entity;
 using ShopApp.WebUI.Models;
+using System;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShopApp.WebUI.Controllers
 {
@@ -54,7 +58,7 @@ namespace ShopApp.WebUI.Controllers
 
             var message = new AlertMessage()
             {
-                Message = $"{entity.Name} eklendi.",
+                Message = $"{entity.Name} added.",
                 AlertType = "success"
             };
             TempData["Message"] = JsonConvert.SerializeObject(message);
@@ -81,7 +85,7 @@ namespace ShopApp.WebUI.Controllers
 
             var message = new AlertMessage()
             {
-                Message = $"{entity.Name} eklendi.",
+                Message = $"{entity.Name} added.",
                 AlertType = "success"
             };
             TempData["Message"] = JsonConvert.SerializeObject(message);
@@ -120,7 +124,7 @@ namespace ShopApp.WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProductEdit(ProductModel model,int[] categoryId)
+        public IActionResult ProductEdit(ProductModel model,int[] categoryId,IFormFile file)
         {
             var entity=_productService.GetById(model.ProductId);
             if (entity == null)
@@ -131,15 +135,26 @@ namespace ShopApp.WebUI.Controllers
             entity.Url = model.Url;
             entity.Price = model.Price;
             entity.Description = model.Description;
-            entity.ImageUrl = model.ImageUrl;
             entity.IsHome = model.IsHome;
             entity.IsApproved = model.IsApproved;
+            //file upload
+            if (file != null)
+            {
+                var randomName = string.Format($"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}");
+                entity.ImageUrl=randomName;
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", randomName);
+                using(var fs = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(fs);
+                }
+            }
+
 
             _productService.Update(entity,categoryId);
 
             var message = new AlertMessage()
             {
-                Message = $"{entity.Name} güncellendi.",
+                Message = $"{entity.Name} updated.",
                 AlertType = "success"
             };
             TempData["Message"] = JsonConvert.SerializeObject(message);
@@ -185,7 +200,7 @@ namespace ShopApp.WebUI.Controllers
 
             var message = new AlertMessage()
             {
-                Message = $"{entity.Name} güncellendi.",
+                Message = $"{entity.Name} updated.",
                 AlertType = "success"
             };
             TempData["Message"] = JsonConvert.SerializeObject(message);
@@ -223,7 +238,7 @@ namespace ShopApp.WebUI.Controllers
 
             var message = new AlertMessage()
             {
-                Message = $"{entity.Name} silindi.",
+                Message = $"{entity.Name} deleted.",
                 AlertType = "danger"
             };
             TempData["Message"] = JsonConvert.SerializeObject(message);
