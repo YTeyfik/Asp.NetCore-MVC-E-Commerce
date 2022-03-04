@@ -30,10 +30,10 @@ namespace ShopApp.WebUI
             services.Configure<IdentityOptions>(options =>
             {
                 //Password
-                options.Password.RequireDigit = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireUppercase=true;
-                options.Password.RequiredLength = 8;
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase=false;
+                options.Password.RequiredLength = 6;
                 
                 //LockOut
                 options.Lockout.MaxFailedAccessAttempts = 5;
@@ -85,6 +85,7 @@ namespace ShopApp.WebUI
             app.UseStaticFiles(); // wwwroot altýndaki klasörler açýlýr            
             app.UseAuthentication();
             app.UseRouting();
+            app.UseAuthorization();
 
             //localhost:5000
             //localhost:5000/products

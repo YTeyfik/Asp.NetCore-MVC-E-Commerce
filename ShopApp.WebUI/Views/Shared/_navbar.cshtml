@@ -8,7 +8,7 @@
           <li class="nav-item">
             <a href="/products" class="nav-link">Products</a>
           </li>
-           <li class="nav-item">
+          <li class="nav-item">
             <a href="" class="nav-link">Cart</a>
           </li>
           <li class="nav-item">
@@ -25,6 +25,30 @@
           <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+        <ul class="navbar-nav mr-3">
+            @if (User.Identity.IsAuthenticated)
+            {
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                    @User.Identity.Name
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/account/logout#">Logout</a>
+                </div>
+            </li>   
+            }
+            else
+            {
+                 <li class="nav-item">
+                <a href="/account/login" class="nav-link">Login</a>
+            </li>
+          
+            <li class="nav-item">
+                <a href="/account/register" class="nav-link">Register</a>
+            </li>
+            }
+           
+        </ul>
     </div>
 </nav>
 
